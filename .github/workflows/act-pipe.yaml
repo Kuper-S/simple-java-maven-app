@@ -16,7 +16,10 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
-          java-version: '11'
+          distribution: 'temurin'
+          java-version: '21'
+          server-id: 'github'
+          server-username: ${{ github.actor }}
 
       - name: Increase Patch Version
         run: mvn versions:set -DgenerateBackupPoms=false -DnewVersion=1.0.${{ github.run_number }}

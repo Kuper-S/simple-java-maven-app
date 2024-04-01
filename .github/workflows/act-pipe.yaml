@@ -18,7 +18,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-          server-id: 'github'
           server-username: ${{ github.actor }}
 
       - name: Increase Patch Version

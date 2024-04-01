@@ -29,8 +29,8 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/app:${{ github.run_number }} .
-          docker tag ${{ secrets.DOCKER_USERNAME }}/app:${{ github.run_number }} ${{ secrets.DOCKER_USERNAME }}/app:latest
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/infi-app:${{ github.run_number }} .
+          docker tag ${{ secrets.DOCKER_USERNAME }}/infi-app:${{ github.run_number }} ${{ secrets.DOCKER_USERNAME }}/infi-app:latest
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -40,5 +40,5 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/app:${{ github.run_number }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/infi-app:${{ github.run_number }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/infi-app:latest

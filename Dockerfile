@@ -1,5 +1,5 @@
 # Stage 1: Build Maven Project
-FROM maven:3.8.4-openjdk-11 AS builder
+FROM maven:3.8.6-openjdk-11 AS builder
 WORKDIR /app
 COPY . .
 RUN mvn clean package

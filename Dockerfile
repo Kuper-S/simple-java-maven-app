@@ -6,13 +6,9 @@ RUN mvn clean package
 # Stage 2 for building the Image
 FROM openjdk:11-jre-slim
 WORKDIR /app
-
 RUN useradd -r app
-
 USER app
-
-COPY --from=builder /app/target/my-app.jar ./app.jar
-
+COPY --from=builder /app/target/*.jar ./app.jar
 # Set image version labels
 ARG IMAGE_VERSION=latest
 LABEL image.version=$IMAGE_VERSION

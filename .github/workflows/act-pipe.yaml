@@ -39,5 +39,5 @@ jobs:
 
       - name: Push Docker Image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/infi-app:${{ github.run_number }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/infi-app:1.0.${{ github.run_number }}
           docker push ${{ secrets.DOCKER_USERNAME }}/infi-app:latest
